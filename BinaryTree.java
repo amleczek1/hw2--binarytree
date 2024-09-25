@@ -255,10 +255,11 @@ public class BinaryTree {
 
         if(node != null)
         {
-        
+        int min = node.data;
         int leftM = findMinHelper(node.left);
         int rightM= findMinHelper(node.right);
-        return Math.min(node.data, Math.min(leftM, rightM));
+        min = Math.min(min, Math.min(leftM, rightM));
+        return min;
         }
         return Integer.MAX_VALUE;
 
