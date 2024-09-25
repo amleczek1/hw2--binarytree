@@ -252,24 +252,16 @@ public class BinaryTree {
      */
 
     private int findMinHelper(Node node) {
-        
-    
-        
-        if(node == null)
+
+        if(node != null)
         {
-            return Integer.MAX_VALUE;
+        
+        int leftM = findMinHelper(node.left);
+        int rightM= findMinHelper(node.right);
+        return Math.min(node.data, Math.min(leftM, rightM));
         }
-        int minLeft = findMinHelper(node.left);
-        int minRight = findMinHelper(node.right);
-        return Math.min(node.data, Math.min(minLeft, minRight));
-        
-        
-        
-        
-        
-        
-        
-        
+        return Integer.MAX_VALUE;
+
     }
 
 
